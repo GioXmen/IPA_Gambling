@@ -77,7 +77,7 @@ namespace GamblingGame
                 Console.WriteLine("Zaisti toliau? [y/n]");
                 string leave = Console.ReadLine();
 
-                if (leave.Equals("y")) { exit = true; }
+                if (leave.Equals("n")) { exit = true; }
 
             }
         }
