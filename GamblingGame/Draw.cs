@@ -9,8 +9,8 @@ namespace GamblingGame
         public static string horse(int distance)
         {
             String tab = String.Empty;
-            string astring = String.Empty;
-            string[] aarray =
+            string result = String.Empty;
+            string[] horse =
             {
                 "        ,--,",
                 "  _ ___/ / |",
@@ -21,31 +21,36 @@ namespace GamblingGame
             };
             for (int i = 0; i < distance; i++)
             {
-                tab += "\t";
+                tab += "      ";
             }
-            for (int i = 0; i < aarray.Length; i++)
+            for (int i = 0; i < horse.Length; i++)
             {
-                astring += tab + aarray[i] + "\n";
+                result += tab + horse[i] + "\n";
             };
-            return astring;
+            return result;
         }
 
-        public static void drawHorses(int horse1, int horse2, int horse3, int horse4)
+        public static string drawHorses(int horse1, int horse2, int horse3, int horse4)
         {
-            Console.WriteLine(new string('-', 474));
-            Console.WriteLine("");
-            Console.WriteLine(Draw.horse(horse1));
-            Console.WriteLine(Draw.horse(horse2));
-            Console.WriteLine(Draw.horse(horse3));
-            Console.WriteLine(Draw.horse(horse4));
-            Console.WriteLine("");
-            Console.WriteLine(new string('-', 474));
-            Console.WriteLine("");
+            /*            Console.Write(new string('-', 474));
+                        Console.Write("");
+                        Console.Write(Draw.horse(horse1));
+                        Console.Write(Draw.horse(horse2));
+                        Console.Write(Draw.horse(horse3));
+                        Console.Write(Draw.horse(horse4));
+                        Console.Write("");
+                        Console.Write(new string('-', 180) + "FINISH" + new string('-', 288));
+                        Console.Write("");
+                        Console.Write(new string('-', 237));*/
+
+            return new string('-', 474) + "" + Draw.horse(horse1) + Draw.horse(horse2) + Draw.horse(horse3) + Draw.horse(horse4) +
+                "" + new string('-', 180) + "FINISH" + new string('-', 288) + "" + new string('-', 237);
         }
 
-        public static void printMoney(int money)
+        public static string printMoney(int money)
         {
-            Console.WriteLine(Art.JoinLetters<Art.MyFont>(0, "D" + money));
+            //Console.Write(Art.JoinLetters<Art.MyFont>(0, "D" + money));
+            return Art.JoinLetters<Art.MyFont>(0, "D" + money);
 
         }
 
@@ -58,6 +63,12 @@ namespace GamblingGame
         public static void printMoneyLoose(int money)
         {
             Console.WriteLine(Art.JoinLetters<Art.MyFont>(-47, "D" + money + "SSSL"));
+
+        }
+
+        public static void drawRace(string result)
+        {
+            Console.Write(result);
 
         }
     }
