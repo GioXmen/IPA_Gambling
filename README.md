@@ -10,7 +10,7 @@ Instrukcijos:
 
 ![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Gambling_screen.png)
 ![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Win_screen.png)
-![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Loose_screen.png)
+![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Loose_Screen.png)
 
 
 # Dokumentacija
