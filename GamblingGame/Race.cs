@@ -5,7 +5,6 @@ namespace GamblingGame
 {
     internal class Race
     {
-        //Sukuriam atsitiktinius skaičius, priskiriam arkliukam, ir tas kuris turi didžiausią, gauną galimybę judėti
         public static void horseRace()
         {
             Random rnd = new Random();
