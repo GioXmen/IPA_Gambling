@@ -33,8 +33,8 @@ namespace GamblingGame
         public static string drawHorses(int horse1, int horse2, int horse3, int horse4)
         {
 
-            return new string('-', 474) + "" + "" + Draw.horse(horse1) + Draw.horse(horse2) + Draw.horse(horse3) + Draw.horse(horse4) +
-                "" + new string('-', 180) + "FINISH" + new string('-', 288) + "" + "" + new string('-', 237);
+            return new string('-', 474) + "\n" + Draw.horse(horse1) + Draw.horse(horse2) + Draw.horse(horse3) + Draw.horse(horse4) +
+                "" + new string('-', 180) + "FINISH" + new string('-', 288) + "\n" + new string('-', 237);
         }
 
         //Piešiam pinigų likutį
