@@ -6,12 +6,14 @@ namespace GamblingGame
 {
     internal class Art
     {
-        public interface IFont
+        //Interfeisas musų sukurtai piešinių žodynui
+        public interface IHorceFontInterface
         {
             Dictionary<char, Func<string[]>> Mapping { get; }
         }
 
-        public class MyFont : IFont
+        //Žodynas mūsų piešiniam, kuris integruojasi su interfeisu
+        public class HorceRaceFont : IHorceFontInterface
         {
             public static string[] horse =
             {
@@ -234,6 +236,7 @@ namespace GamblingGame
                 "                                                                "
             };
 
+            //Raides ir Simbolius sujungiam su žodyno piešiniais, kintamaisiais
             public Dictionary<char, Func<string[]>> Mapping { get; }
                       = new Dictionary<char, Func<string[]>>{
                    { 'H', () => horse},
@@ -253,28 +256,29 @@ namespace GamblingGame
                    { 'L', () => looser}};
         }
 
+        //Skaitom gaunama tekstą ir formatavimą, ir išverčiam kiekvieną simbolį į piešinį iš žodyno, bei sujungiam.
         public static string JoinLetters<T>(int space, string text)
-        where T : class, IFont, new()
+                            where T : class, IHorceFontInterface, new()
         {
             var font = new T();
 
-            // get the letters
-            var arrays = text.ToCharArray()
+            // Nuskaityti ascii piešinį į masyvą
+            var asciiArray = text.ToCharArray()
                              .Where(x => font.Mapping.ContainsKey(x))
                              .Select(x => font.Mapping[x].Invoke())
                              .ToList();
 
-            // get the max height and width
-            var h = arrays.Max(x => x.Length);
-            var w = arrays.Max(x => x.Max(y => y.Length)) + space;
+            // Gauti ilgiausią plotį ir aukštį
+            var height = asciiArray.Max(x => x.Length);
+            var width = asciiArray.Max(x => x.Max(y => y.Length)) + space;
 
-            var result = new string[h];
+            var result = new string[height];
 
-            // join each letter    
-            // if the letter is too short, add default width
-            foreach (var array in arrays) { 
-                for (var j = 0; j < h; j++) { 
-                    result[j] += (j >= array.Length ? " " : array[j]).PadRight(w);
+            // Sujungiam kiekviena raidę    
+            // Dinamiškai formatuojam tarpus pagal dydi/ilgį įvesties ASCII
+            foreach (var asciiLine in asciiArray) { 
+                for (var line = 0; line < height; line++) { 
+                    result[line] += (line >= asciiLine.Length ? " " : asciiLine[line]).PadRight(width);
                 }
             }
 
