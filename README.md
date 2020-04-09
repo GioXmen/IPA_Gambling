@@ -8,6 +8,10 @@ Instrukcijos:
 3. Pasirinkite arkliuka nuo 1 iki 4, skaiciuojama nuo viršaus iki apačios.
 4. Žiurėkite lenktynes, ir po lenktynių įveskite y jei norite žaisti toliau.
 
+![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Gambling_screen.png)
+![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Win_screen.png)
+![alt text](https://raw.githubusercontent.com/GioXmen/IPA_Gambling/develop/AppImages/Loose_screen.png)
+
 
 # Dokumentacija
 ## Objektai / Masyvai / Kintamieji
